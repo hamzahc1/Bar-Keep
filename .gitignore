@@ -8,3 +8,4 @@ iisnode.yml
 .Spotlight-V100
 .Trashes
 node_modules/
+config/yelpAPI.js

@@ -1,6 +1,10 @@
-var express = require("express");
-var app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-
-app.use('/client', express.static( __dirname + '/client'));
+angular.module('barkeep', [
+  'ngRoute'
+])
+.config(function($routeProvider, $httpProvider){
+	$routeProvider
+	.when('/getBars',	{
+		templateUrl: '/yelpBars/yelpBars.html',
+		controller: 'yelpBarsController'
+	});
+});

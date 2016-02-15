@@ -1,0 +1,10 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+azure.err
+iisnode.yml
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+node_modules/

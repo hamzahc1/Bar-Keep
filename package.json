@@ -1,0 +1,23 @@
+{
+  "name": "bar-keep",
+  "version": "1.0.0",
+  "description": "A MEAN stack app to save lists of favourite bars using Yelp's API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hamzah Chaudhary (hamzahchaudhary@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+  	"angular":"^1.5.0",
+    "angular-route": "^1.5.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.4.3",
+    "cors": "^2.7.1",
+    "express": "^4.4.5",
+    "jwt-simple": "^0.2.0",
+    "mongoose": "^4.1.0",
+    "q": "^1.4.1",
+    "request": "^2.36.0"
+  }
+}

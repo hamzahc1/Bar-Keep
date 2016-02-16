@@ -3,17 +3,13 @@
 
 <form>
   <input id="inputField" ng-model='location' type='text' required>
-  <button type="submit" ng-click= "listBars(location)" class="postButton">Get Bars from {{location}}</a></button>
+  <button type="submit" ng-click= "listBars(location)" class="btn btn-warning">Get Bars from {{location}}</button>
 </form>
 
- <ul ng-model = 'bars'>
- 
+ 			<div class = container id ='scrollBox'>
 
+      <ul ng-model = 'bars'>
+	      <div class ='item searchItem' style="cursor: pointer;" ng-click='faveBar(bar)' ng-repeat="bar in bars">{{bar.name}}<div class ='searchData'><img ng-src = '{{bar.rating_img_url}}'/></br>{{bar.review_count}} people currently love this place!</br><b>The one-liner:</b>{{bar.snippet_text}}
+			</div>
 
-
-<li ng-repeat="bar in bars">{{bar.name}}<button type= 'submit' ng-click ='faveBar(bar)'>Fave Bar</button></li>
-
-
-
-</ul>
   </div>

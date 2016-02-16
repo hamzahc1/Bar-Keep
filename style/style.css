@@ -4,27 +4,64 @@ body {
   font-family: arial, sans-serif;
   background: url('/style/barkeepBackground.jpg') no-repeat center fixed;
   background-size: cover;
+  /*opacity: 0.2;*/
 }
 
 .item {
   margin: 10px;
+  font-weight: bold;
+}
+
+.searchItem:hover {
+	color: #ff3399;
+}
+a {
+	color: black;
+}
+
+a:hover {
+	color: grey;
+	text-decoration: none;
 }
 .barData{
 	color: grey;
+	font-weight: normal;
 }
+.searchData {
+	color: grey;
+	font-style: italic;
+	font-weight: normal;
+}
+.searchData:hover{
+	color: #404040;
+}
+.btn{
+	color: white;
+}
+
 #map{
     margin: auto;
+    margin-top: 10px;
     width: 60%;
     border: 3px ;
     padding: 10px;
 }
 
-.container {
+#scrollBox {
 	margin-top: 10px;
   background-color: #ffffff;
   border: 1px grey solid;
   border-radius: 15px;
-  /*opacity: 0.6;*/
+  opacity: 0.9;
   height: 400px;
   overflow-y: scroll;
 }
+
+h3 {
+	color: white;
+}
+
+h2 {
+	color: white;
+}
+

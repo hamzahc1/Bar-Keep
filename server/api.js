@@ -20,7 +20,7 @@ var yelp_request = function(userParameters, callback){
     oauth_timestamp : n().toString().substr(0,10),
     oauth_signature_method : 'HMAC-SHA1',
     oauth_version : '1.0',
-    limit: 10
+    limit: 15
   };
 
   var parameters = _.assign(userParameters, required_parameters);

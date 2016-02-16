@@ -3,8 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-
-app.use('/client', express.static( __dirname + '/client'));
+app.use('/client', express.static(__dirname.split("/").slice(0,-1).join('/') + '/client'));
+app.use('/node_modules', express.static(__dirname.split("/").slice(0,-1).join('/') + '/node_modules'));
 
 app.route('/').
   options(function (req, res, next) {
@@ -12,13 +12,10 @@ app.route('/').
       next();
   }).
   get(function (req, res) {
-  	res.sendFile(path.join(__dirname.split("/").slice(0,-1).join('/') + '/index.html'));
+  	res.sendFile(__dirname.split("/").slice(0,-1).join('/') + '/index.html');
   });
-
 
 var port = 8080;
 app.listen(8080, function(){
 console.log("Server listening on....", port);
 });
-
-// module.exports = app;

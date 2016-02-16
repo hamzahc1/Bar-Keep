@@ -3,13 +3,14 @@ angular.module('barkeep.yelpBars', [])
 
 .controller('yelpBarsController', function($scope, RequestBars){
 	// $scope.bars = ['hello', 'world']; 
-	$scope.listBars = function(){
+	$scope.listBars = function(location){
 	// 	console.log("INSIDE LIST BARS!")
-		RequestBars.getBars()
+		RequestBars.getBars(location)
 		.then(function(data){
 			console.log("INSIDE INNER FUNCTION!");
 			// $scope.$apply(function(){
 			$scope.bars = data;
+			$scope.location='';
 			// });
 			console.log('THE BARS ARE!', $scope.bars);
 			console.log('the first bar is', $scope.bars[0].name);

@@ -8,6 +8,7 @@ var db = require('./BarSchema.js');
 mongoose.connect('mongodb://localhost/barkeep');
 
 app.use('/client', express.static(__dirname.split("/").slice(0,-1).join('/') + '/client'));
+app.use('/style', express.static(__dirname.split("/").slice(0,-1).join('/') + '/style'));
 app.use('/node_modules', express.static(__dirname.split("/").slice(0,-1).join('/') + '/node_modules'));
 
 app.route('/').
@@ -35,9 +36,10 @@ app.post('/getBars', function(req, res){
       console.log('error searching in db!');
       res.send(404);
     } else if(found) {
+      console.log('Item already in the database, you are good to go!');
       return res.send(201);
     } else {
-      db.create({barName: req.body.bar, barPhone: req.body.phone}, function(error, newItem){
+      db.create({barName: req.body.bar, barPhone: req.body.phone, city: req.body.city}, function(error, newItem){
         if(error){
           console.log('ERROR POSTING TO THE SERVER:', error);
           res.send(404);
@@ -58,6 +60,18 @@ app.get('/faveBars', function(req, res){
     } else {
       // console.log('got some items for ya!', allBars);
       res.send(200, allBars);
+    }
+  });
+});
+
+app.delete('/faveBars', function(req,res){
+  db.remove({barName: req.query.barName}, function(err, deleted){
+    if(err){
+      console.log('error deleting from database');
+      res.send(404);
+    } else {
+      console.log('all deleted!');
+      res.send(204, deleted);
     }
   });
 });

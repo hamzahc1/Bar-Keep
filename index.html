@@ -2,19 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8" />
+   <link rel="stylesheet" type="text/css" href="style/style.css" />
     <title>Bar-Keep</title>
 
   </head>
   <body ng-app='barkeep'>
-    <h1>Bar-Keep!</h1>
+    <h1><a href = '#/'>Bar-Keep!</a></h1>
+    <h3>Welcome to Bar-Keep, do you want to be that friend who always has the hook up on the latest bars in the city? Search around  for the coolest watering holes around and save your favourite ones!</h3>
    <script src="node_modules/angular/angular.min.js"></script>
    <script src="node_modules/angular-route/angular-route.min.js"></script>
    <script src='client/app.js'></script>
    <script src='client/yelpBars/yelpBarsController.js'></script>
    <script src='client/faveBars/faveBarsController.js'></script>
    <script src='client/services/services.js'></script>
-   <button type= 'submit'><a href = '#/getBars'>Get Bars</a></button>
-   <button type= 'submit'><a href = '#/faveBars'>Fave Bars</a></button>
+   <button type= 'submit'><a href = '#/getBars'>Find Bars</a></button>
+   <button type= 'submit'><a href = '#/faveBars'>My fave Bars</a></button>
 
    <div ng-view></div>
 

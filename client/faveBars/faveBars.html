@@ -2,6 +2,6 @@
 <div ng-controller = 'faveBarsController'>
        <button type= 'submit' ng-click ='loadBars()'>Show me some Bars</button>
        <ul ng-model = 'bars'>
-      <li ng-repeat="bar in bars">{{bar.barName}}</li>
+      <div class ='item' ng-dblclick='removeBar(bar.barName)' ng-repeat="bar in bars | orderBy: 'city' ">{{bar.barName}}<div class ='barData'>{{bar.city}} </br> Phone Number: {{bar.barPhone}}</div></div>
       </ul>
   </div>

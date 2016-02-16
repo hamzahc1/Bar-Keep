@@ -8,5 +8,11 @@ angular.module('barkeep.faveBars', [])
 				console.log('LOAD BAR DATA:', $scope.bars);
 			});
 	};
-
+	$scope.removeBar = function(barName){
+		// console.log('IN DELETE!');
+		RequestBars.deleteBar(barName)
+		.then(function(){
+			$scope.loadBars();
+		});
+	};
 });

@@ -1,12 +1,12 @@
 angular.module('barkeep.requests', [])
 	.factory('RequestBars', function($http){
 		return{
-		getBars : function(){
-			console.log('in here!');
+		getBars : function(location){
+			console.log(location);
 			return $http({
 				method: 'GET',
 				url: '/getBars',
-				params: {'location': 'San Francisco', 'category_filter':'bars' },
+				params: {'location': location, 'category_filter':'bars' },
 			}).then(function(response){
 				console.log('RESPONSE IS --------------->', response.data);
 				return response.data;
@@ -16,11 +16,11 @@ angular.module('barkeep.requests', [])
 		},
 		addBar: function(item) {
 			// var barName = item.name;
-			console.log("adding a bar was called", item.name);
+			console.log("adding a bar was called", item.location.city);
 			return $http({
 				method: 'POST',
 				url: '/getBars',
-				data: {'bar': item.name, 'phone': item.phone}
+				data: {'bar': item.name, 'phone': item.phone, city: item.location.city}
 			})
 			.then(function(response) {
 				console.log('THIS IS THE RESPONSE', response);
@@ -39,6 +39,19 @@ angular.module('barkeep.requests', [])
 			}, function(error){
 				console.log('Error from the Angular factory!', error);
 			});
-		}
+		},
+		deleteBar : function(barName){
+			console.log(barName);
+			return $http({
+				method: 'DELETE',
+				url: '/faveBars',
+				params: {'barName': barName},
+			}).then(function(response){
+				// console.log('BAR DELETED IS --------------->', response);
+				return response.data;
+			}, function(error){
+				console.log('ERROR DELETING THE BAR!');
+			});
+		},
 		};
 	});

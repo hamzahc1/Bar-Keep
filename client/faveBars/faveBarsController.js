@@ -5,7 +5,7 @@ angular.module('barkeep.faveBars', [])
 		RequestBars.loadAllBars()
 			.then(function(allBars){
 				$scope.bars = allBars;
-				console.log('LOAD BAR DATA:', $scope.bars);
+				// console.log('LOAD BAR DATA:', $scope.bars);
 					 var map = new google.maps.Map(document.getElementById('map'), {
 				      zoom: 2,
 				      center: new google.maps.LatLng(37.784863, -122.408891),

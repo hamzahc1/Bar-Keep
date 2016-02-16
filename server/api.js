@@ -19,7 +19,8 @@ var yelp_request = function(userParameters, callback){
     oauth_nonce : n(),
     oauth_timestamp : n().toString().substr(0,10),
     oauth_signature_method : 'HMAC-SHA1',
-    oauth_version : '1.0'
+    oauth_version : '1.0',
+    limit: 10
   };
 
   var parameters = _.assign(userParameters, required_parameters);
@@ -33,6 +34,8 @@ var yelp_request = function(userParameters, callback){
   });
 
 };
+
+module.exports = yelp_request;
 
 // yelp_request({location: 'San Francisco', category_filter:'bars', limit: '1',}, function(error, resp, body){
 // 	if(error){

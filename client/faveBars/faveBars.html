@@ -1,0 +1,7 @@
+<h2>Welcome to your favourite bars! :D</h2>
+<div ng-controller = 'faveBarsController'>
+       <button type= 'submit' ng-click ='loadBars()'>Show me some Bars</button>
+       <ul ng-model = 'bars'>
+      <li ng-repeat="bar in bars">{{bar.barName}}</li>
+      </ul>
+  </div>

@@ -1,1 +1,7 @@
 <h2>MADE IT TO HERE</h2>
+<div ng-controller = 'yelpBarsController'>
+       <button type= 'submit' ng-click ='listBars()'>Get Bars</button>
+       <ul ng-model = 'bars'>
+      <li ng-repeat="bar in bars">{{bar.name}}<button type= 'submit' ng-click ='faveBar(bar)'>Fave Bar</button></li>
+      </ul>
+  </div>

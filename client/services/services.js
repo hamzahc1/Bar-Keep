@@ -15,12 +15,15 @@ angular.module('barkeep.requests', [])
 			});
 		},
 		addBar: function(item) {
-			// var barName = item.name;
+			var barRating = item.rating_img_url;
+			var barURL = item.url;
+			console.log(barRating);
+			console.log(barURL);
 			console.log("adding a bar was called", item.location.city);
 			return $http({
 				method: 'POST',
 				url: '/getBars',
-				data: {'bar': item.name, 'phone': item.phone, city: item.location.city}
+				data: {'bar': item.name, 'phone': item.phone, 'city': item.location.city, 'url': barURL, 'rating': barRating}
 			})
 			.then(function(response) {
 				console.log('THIS IS THE RESPONSE', response);

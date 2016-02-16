@@ -28,7 +28,7 @@ angular.module('barkeep.requests', [])
 				data: {'bar': item.name, 'phone': item.phone, 'city': item.location.city, 'url': barURL, 'rating': barRating, 'longit': longitude, 'latit': latitude}
 			})
 			.then(function(response) {
-				console.log('THIS IS THE RESPONSE', response);
+				// console.log('THIS IS THE RESPONSE', response);
 				return response.data;
 			}, function(error) {
 				console.error('THERE IS AN ERROR');

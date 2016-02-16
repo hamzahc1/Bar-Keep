@@ -17,15 +17,20 @@ body {
 }
 a {
 	color: black;
+	text-decoration: none;
 }
 
 a:hover {
-	color: grey;
+	color: #ff3399;
 	text-decoration: none;
 }
+
 .barData{
 	color: grey;
 	font-weight: normal;
+}
+.barData:hover{
+	color: #404040;
 }
 .searchData {
 	color: grey;
@@ -37,6 +42,15 @@ a:hover {
 }
 .btn{
 	color: white;
+}
+
+.favouriteDisplay{
+  opacity: 0.8;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 15px;
+  color: #ff3399;
+  font-size: 2.25em;
 }
 
 #map{
@@ -55,6 +69,10 @@ a:hover {
   opacity: 0.9;
   height: 400px;
   overflow-y: scroll;
+}
+h1 {
+	font-size: 5em;
+	color: white;
 }
 
 h3 {

@@ -11,6 +11,7 @@ angular.module('barkeep.yelpBars', [])
 			// $scope.$apply(function(){
 			$scope.bars = data;
 			$scope.location='';
+			$scope.displayBar='';
 			// });
 			console.log('THE BARS ARE!', $scope.bars);
 			console.log('the first bar is', $scope.bars[0].name);
@@ -19,7 +20,11 @@ angular.module('barkeep.yelpBars', [])
 
 		$scope.faveBar = function(bar){
 		// console.log("BAR IS", bar);
-		RequestBars.addBar(bar);
+		RequestBars.addBar(bar)
+		.then(function(){
+			$scope.displayBar = bar.name+' was added to your favourite bars, nice.';
+			// console.log(bar.name);
+		});
 		// $scope.newItem = '';
 		};
 

@@ -4,3 +4,19 @@
 .barData{
 	color: grey;
 }
+#map{
+    margin: auto;
+    width: 60%;
+    border: 3px ;
+    padding: 10px;
+}
+
+.container {
+	margin-top: 10px;
+  background-color: #ffffff;
+  border: 1px grey solid;
+  border-radius: 15px;
+  /*opacity: 0.6;*/
+  height: 400px;
+  overflow-y: scroll;
+}

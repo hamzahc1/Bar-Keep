@@ -15,6 +15,8 @@ angular.module('barkeep.requests', [])
 			});
 		},
 		addBar: function(item) {
+			var latitude = item.location.coordinate.latitude;
+			var longitude = item.location.coordinate.longitude;
 			var barRating = item.rating_img_url;
 			var barURL = item.url;
 			console.log(barRating);
@@ -23,7 +25,7 @@ angular.module('barkeep.requests', [])
 			return $http({
 				method: 'POST',
 				url: '/getBars',
-				data: {'bar': item.name, 'phone': item.phone, 'city': item.location.city, 'url': barURL, 'rating': barRating}
+				data: {'bar': item.name, 'phone': item.phone, 'city': item.location.city, 'url': barURL, 'rating': barRating, 'longit': longitude, 'latit': latitude}
 			})
 			.then(function(response) {
 				console.log('THIS IS THE RESPONSE', response);

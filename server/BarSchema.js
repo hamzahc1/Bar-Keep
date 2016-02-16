@@ -5,7 +5,9 @@ var BarSchema = new mongoose.Schema({
 	barPhone: String,
 	barURL: String,
 	barRatingURL: String,
-	city: String
+	city: String,
+	latitude: Number,
+	longitude: Number,
 });
 
 module.exports = mongoose.model('Bar', BarSchema);

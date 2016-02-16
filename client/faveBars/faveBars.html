@@ -1,14 +1,15 @@
 <h2>Welcome to your favourite bars! :D</h2>
 <div ng-controller = 'faveBarsController'>
-       <button type= 'submit' ng-click ='loadBars()'>Show me some Bars</button>
-       <ul ng-model = 'bars'>
+   <button type= 'submit' ng-click ='loadBars()'>Show me some Bars</button>
+	 <div id="map" style="width: 900px; height: 600px;"></div>
+ 			<div class = container>
 
-      <div class ='item' style="cursor: pointer;" ng-dblclick='removeBar(bar.barName)' ng-repeat="bar in bars | orderBy: 'city' "><a target='_blank' ng-href='{{bar.barURL}}'>{{bar.barName}}</a>
-      	<div class ='barData'><img ng-src = '{{bar.barRatingURL}}'/></br>{{bar.city}} </br> Phone Number: {{bar.
-				barPhone}}
-				</div>
-
-      </div>
-
+      <ul ng-model = 'bars'>
+	      <div class ='item' style="cursor: pointer;" ng-dblclick='removeBar(bar.barName)' ng-repeat="bar in bars | orderBy: 'city' "><a target='_blank' ng-href='{{bar.barURL}}'>{{bar.barName}}</a>
+	      	<div class ='barData'><img ng-src = '{{bar.barRatingURL}}'/></br>{{bar.city}} </br> Phone Number: {{bar.
+					barPhone}}
+					</div>
+      	</div>
       </ul>
+    </div>
   </div>

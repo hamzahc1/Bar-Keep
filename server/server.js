@@ -30,8 +30,6 @@ app.get('/getBars', function(req, res){
 });
 
 app.post('/getBars', function(req, res){
-  console.log('req.body.rating is ------>', req.body.rating);
-  // console.log()
   db.findOne({barName: req.body.bar}, function(error, found){
     if(error){
       console.log('error searching in db!');
@@ -40,7 +38,7 @@ app.post('/getBars', function(req, res){
       console.log('Item already in the database, you are good to go!');
       return res.send(201);
     } else {
-      db.create({barName: req.body.bar, barPhone: req.body.phone, city: req.body.city, barURL: req.body.url, barRatingURL: req.body.rating}, function(error, newItem){
+      db.create({barName: req.body.bar, barPhone: req.body.phone, city: req.body.city, barURL: req.body.url, barRatingURL: req.body.rating, latitude: req.body.latit, longitude: req.body.longit}, function(error, newItem){
         if(error){
           console.log('ERROR POSTING TO THE SERVER:', error);
           res.send(404);

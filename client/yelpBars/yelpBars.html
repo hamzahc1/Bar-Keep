@@ -2,7 +2,7 @@
 <div ng-controller = 'yelpBarsController'>
 
 <form>
-  <input id="inputField" ng-model='location' type='text' required>
+  <input id="inputField" ng-model='location' type='text' placeholder='Enter a city here!' required>
   <button type="submit" ng-click= "listBars(location)" class="btn btn-warning">Get Bars from {{location}}</button>
 </form>
 

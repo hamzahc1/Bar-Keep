@@ -19,10 +19,10 @@ angular.module('barkeep.yelpBars', [])
 	};
 
 		$scope.faveBar = function(bar){
-		// console.log("BAR IS", bar);
+		console.log("BAR IS", bar);
 		RequestBars.addBar(bar)
 		.then(function(){
-			$scope.displayBar = bar.name+' was added to your favourite bars, nice.';
+			$scope.displayBar = bar.name+' in ' + bar.location.city + ' was added to your favourite bars, nice.';
 			// console.log(bar.name);
 		});
 		// $scope.newItem = '';

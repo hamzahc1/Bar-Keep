@@ -6,6 +6,27 @@ var apiCall = require('./api.js');
 app.use(bodyParser.json());
 var db = require('./BarSchema.js');
 mongoose.connect('mongodb://localhost/barkeep');
+var keys = require('../config/yelpAPI.js');
+// var plivo = require('plivo');
+// var p = plivo.RestAPI({
+//   authId: keys.PLIVO_ID,
+//   authToken: keys.PLIVO_TOKEN
+// });
+
+// var params = {
+//     'src': '13306807074', // Sender's phone number with country code
+//     'dst' : '14153167181', // Receiver's phone Number with country code
+//     'text' : "Hi, message from Hamzah", // Your SMS Text Message - English
+//     //'text' : "こんにちは、元気ですか？" // Your SMS Text Message - Japanese
+//     //'text' : "Ce est texte généré aléatoirement" // Your SMS Text Message - French
+//     'url' : null, // The URL to which with the status of the message is sent
+//     'method' : "POST" // The method used to call the url
+// };
+
+// p.send_message(params, function (status, response) {
+//     console.log('Status: ', status);
+//     console.log('API Response:\n', response);
+// });
 
 app.use('/client', express.static(__dirname.split("/").slice(0,-1).join('/') + '/client'));
 app.use('/style', express.static(__dirname.split("/").slice(0,-1).join('/') + '/style'));

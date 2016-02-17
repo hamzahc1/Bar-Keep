@@ -63,6 +63,7 @@ a:hover {
 
 #scrollBox {
 	margin-top: 10px;
+  margin-bottom: 15px;
   background-color: #ffffff;
   border: 1px grey solid;
   border-radius: 15px;

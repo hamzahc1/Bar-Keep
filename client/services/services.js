@@ -8,10 +8,10 @@ angular.module('barkeep.requests', [])
 				url: '/getBars',
 				params: {'location': location, 'category_filter':'bars' },
 			}).then(function(response){
-				console.log('RESPONSE IS --------------->', response.data);
+				// console.log('RESPONSE IS --------------->', response.data);
 				return response.data;
 			}, function(error){
-				console.log('we got a big problem yo');
+				// console.log('we got a big problem yo');
 			});
 		},
 		addBar: function(item) {

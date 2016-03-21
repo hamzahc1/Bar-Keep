@@ -14,6 +14,5 @@ angular.module('barkeep', [
 	.when('/faveBars', {
 		templateUrl: 'client/faveBars/faveBars.html',
 		controller: 'faveBarsController'
-	})
-	.otherwise({redirectTo:'/'});
+	});
 });

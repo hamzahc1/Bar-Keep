@@ -7,17 +7,26 @@ body {
   /*opacity: 0.2;*/
 }
 
+a {
+	color: black;
+	text-decoration: none;
+}
+
+footer {
+  color: grey;
+}
+
+footer a {
+  color: white;
+}
+
 .item {
   margin: 10px;
   font-weight: bold;
 }
 
 .searchItem:hover {
-	color: #ff3399;
-}
-a {
-	color: black;
-	text-decoration: none;
+  color: #ff3399;
 }
 
 a:hover {

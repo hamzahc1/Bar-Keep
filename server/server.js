@@ -28,7 +28,7 @@ var keys = require('../config/yelpAPI.js');
 //     console.log('API Response:\n', response);
 // });
 
-app.use('/client', express.static(__dirname.split("/").slice(0,-1).join('/') + '/client'));
+app.use(express.static(__dirname.split("/").slice(0,-2).join('/') + '/Bar-Keep'));
 app.use('/style', express.static(__dirname.split("/").slice(0,-1).join('/') + '/style'));
 app.use('/node_modules', express.static(__dirname.split("/").slice(0,-1).join('/') + '/node_modules'));
 
@@ -38,7 +38,7 @@ app.route('/').
       next();
   }).
   get(function (req, res) {
-  	res.sendFile(__dirname.split("/").slice(0,-1).join('/') + '/index.html');
+  	res.render('index');
   });
 
 app.get('/getBars', function(req, res){

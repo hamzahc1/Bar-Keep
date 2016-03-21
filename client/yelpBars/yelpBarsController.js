@@ -7,14 +7,14 @@ angular.module('barkeep.yelpBars', [])
 	// 	console.log("INSIDE LIST BARS!")
 		RequestBars.getBars(location)
 		.then(function(data){
-			console.log("INSIDE INNER FUNCTION!");
+			// console.log("INSIDE INNER FUNCTION!");
 			// $scope.$apply(function(){
 			$scope.bars = data;
-			$scope.location='';
-			$scope.displayBar='';
+			$scope.locatio ='';
+			$scope.displayBar ='';
 			// });
-			console.log('THE BARS ARE!', $scope.bars);
-			console.log('the first bar is', $scope.bars[0].name);
+			// console.log('THE BARS ARE!', $scope.bars);
+			// console.log('the first bar is', $scope.bars[0].name);
 		});
 	};
 
